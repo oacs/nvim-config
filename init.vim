@@ -13,8 +13,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'dracula/vim'
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'davidhalter/jedi-vim'
+Plug 'dense-analysis/ale'
+
 " Initialize plugin system
 call plug#end()
 
@@ -261,3 +262,16 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+" Ale
+let g:ale_linters = {
+      \'python': ['flake8', 'pylint'],
+      \'javascript': ['eslint'],
+      \}
+
+let g:ale_fixers = {
+      \'python': ['autopep8', "yapf", "isort"],
+      \}
+nmap <F10> :ALEFix<CR>
+let g:ale_fix_on_save = 1
+
