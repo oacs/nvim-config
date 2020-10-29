@@ -1,3 +1,17 @@
+" Nvim basic config
+set number
+set mouse=a
+set numberwidth=1
+set clipboard=unnamed
+syntax enable
+set showcmd
+set ruler
+set encoding=utf-8
+set showmatch
+set relativenumber
+set laststatus=2
+set noshowmode
+
 "pecify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
@@ -267,6 +281,8 @@ nnoremap <A-l> <C-w>l
 let g:ale_linters = {
       \'python': ['flake8', 'pylint'],
       \'javascript': ['eslint'],
+      \'typescript': ['eslint'],
+      \'cpp': ['']
       \}
 
 let g:ale_fixers = {
